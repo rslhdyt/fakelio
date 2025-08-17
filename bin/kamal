@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# This script runs the kamal CLI with any arguments passed to it.
+if ! kamal --version >/dev/null 2>&1; then
+  echo "Error: kamal is not installed. Please install kamal before running this script."
+  exit 1
+fi
+
+dotenv -f .env.kamal -- kamal "$@"
