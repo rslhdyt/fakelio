@@ -1,4 +1,5 @@
 require 'twilio-ruby'
+require 'pry'
 
 # monkey patch to use fakelio.rslhdyt.dev as the base url
 module Twilio
@@ -35,6 +36,4 @@ client = Twilio::REST::Client.new(
   "BANANA",
 )
 
-response = client.trusthub.v1.customer_profiles.list
-
-puts response.inspect
+client.trusthub.v1.customer_profiles.list
